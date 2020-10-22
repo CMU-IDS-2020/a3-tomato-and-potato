@@ -27,7 +27,8 @@ picked = alt.selection_multi(fields = ['Primary Type'])
 type_chart = alt.Chart(df).mark_bar().encode(
     alt.Y('Primary Type:N', sort='-x'),
     alt.X('count():Q'),
-    color = alt.condition(picked, alt.value('#1f77b4'), alt.value('lightgray')),
+    # alt.value('#1f77b4')
+    color = alt.condition(picked, "Location Description", alt.value('lightgray')),
     tooltip = ['Primary Type', 'count()']
 ).add_selection(picked)
 
@@ -62,7 +63,7 @@ alt.Chart(df).transform_filter(picked).transform_aggregate(
 ).mark_geoshape(
     stroke='white'
 ).encode(
-    color='arrest_rate:Q',
+    color=alt.Color('arrest_rate:Q', scale=alt.Scale(domain=[0, 0.5, 1.0], scheme='yellowgreenblue')),
     tooltip=['community:N', 'arrest_rate:Q']
 ).transform_lookup(
     lookup='Community Area',
