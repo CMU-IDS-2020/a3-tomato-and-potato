@@ -30,7 +30,7 @@ type_chart = alt.Chart(df).mark_bar().encode(
     # alt.value('#1f77b4')
     color = alt.condition(picked, "Location Description", alt.value('lightgray')),
     tooltip = ['Primary Type', 'count()']
-).add_selection(picked)
+).add_selection(picked).properties(title='Crime Type Count')
 
 chicago_map = \
 alt.Chart(df).transform_filter(picked).transform_aggregate(
@@ -48,6 +48,8 @@ alt.Chart(df).transform_filter(picked).transform_aggregate(
     lookup='Community Area',
     from_=alt.LookupData(geojson, 'properties.area_numbe', ['properties.community']),
     as_=['community']
+).properties(
+    title='Geo Map for Crime Count'
 )
 
 arrest_map = \
@@ -69,6 +71,8 @@ alt.Chart(df).transform_filter(picked).transform_aggregate(
     lookup='Community Area',
     from_=alt.LookupData(geojson, 'properties.area_numbe', ['properties.community']),
     as_=['community']
+).properties(
+    title='Geo Map for Arrest rate'
 )
 
 brush = alt.selection_interval(encodings=['x'])
@@ -87,7 +91,7 @@ alt.Chart(df).transform_filter(picked).transform_filter(brush)\
     alt.Y('day(Date):O', title='date'),
     alt.Color('count()', title='Case Count'),
     tooltip=['hours(Date)', 'day(Date)', 'count()']
-)
+).properties(title="Crime Time heatmap")
 
 # location_chart = \
 # alt.Chart(df).transform_filter(picked)\
@@ -95,7 +99,7 @@ alt.Chart(df).transform_filter(picked).transform_filter(brush)\
 #     alt.X('Location Description', sort='-y'),
 #     alt.Y('count()')
 # )
-
+st.write("## Multi-Select Primary Type and Brush select time")
 st.write(
     alt.vconcat(
         # alt.hconcat(
@@ -119,6 +123,7 @@ st.write(
 )
 
 picked = alt.selection_multi(fields=['Community Area'])
+st.write("## Multi-Select Community Area")
 
 chicago_map = \
 alt.Chart(df).transform_aggregate(
@@ -144,7 +149,7 @@ alt.Chart(df)\
     alt.Y('Primary Type:N', sort='-x'),
     alt.X('count():Q'),
     tooltip = ['Primary Type', 'count()']
-)
+).properties(title="Crime Type total count")
 
 heatmap = \
 alt.Chart(df).transform_filter(picked)\
@@ -153,7 +158,7 @@ alt.Chart(df).transform_filter(picked)\
     alt.Y('day(Date):O', title='date'),
     alt.Color('count()', title='Case Count'),
     tooltip=['hours(Date)', 'day(Date)', 'count()']
-)
+).properties(title="Crime Time heatmap")
 
 st.write(
     alt.vconcat(
