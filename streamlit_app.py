@@ -74,7 +74,7 @@ brush = alt.selection_interval(encodings=['x'])
 time_chart = \
 alt.Chart(df).transform_filter(picked)\
 .mark_area().encode(
-    alt.X('yearmonth(Date)'),
+    alt.X('yearmonthdate(Date)'),
     alt.Y('count()'),
 ).properties(width=600)
 
