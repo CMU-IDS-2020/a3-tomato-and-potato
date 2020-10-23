@@ -24,4 +24,4 @@ Finally, we provided the geograpchical interaction by adding multiple selection 
 
 ## Development
 
-TODO: **An overview of your development process.** Describe how the work was split among the team members. Include a commentary on the development process, including answers to the following questions: Roughly how much time did you spend developing your application (in people-hours)? What aspects took the most time?
+We fisrtly search for the dataset and learn how to use altair and streamlit. During this time, we also search some demo and learn the code. It took us 10 hours/people. Then, we discuss the dataset and  some possible design idea, it took us 5 hours/people. Then, we start develop our code, tong xiao developed a framework first, and zhanlin sun made modification and added graph, it took everyone 15 hours/people. During this time, we also try alternative methods. Finally, we write the final writeup, which took 2 hours/people
