@@ -19,8 +19,8 @@ def load_map():
 df = load_data()
 geojson = load_map()
 
-# if st.checkbox('Show Raw Data'):
-#     st.write(df.head())
+if st.checkbox('Show Raw Data'):
+    st.write(df.head())
 
 picked = alt.selection_multi(fields = ['Primary Type'])
 
@@ -88,6 +88,7 @@ alt.Chart(df).transform_filter(picked).transform_filter(brush)\
 )
 
 st.write("## How is crime distributed?")
+st.write("Select multiple crime types on bar chart and brush a time interval on timeline chart to view distributions.")
 st.write(
     alt.vconcat(
         type_chart.properties(
@@ -123,6 +124,7 @@ st.write(
 )
 
 st.write("## Where do you live?")
+st.write("Select multiple community areas on choropleth map to view crime details.")
 picked = alt.selection_multi(fields=['Community Area'])
 
 chicago_map = \
