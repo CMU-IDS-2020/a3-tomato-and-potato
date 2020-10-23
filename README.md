@@ -1,6 +1,6 @@
 # CMU Interactive Data Science Assigment 3
 
-* **Team members**: zhanlins@andrew.cmu.edu and txiao2@andrew.cmu.edu
+* **Team members**: Zhanlin Sun (zhanlins) and Tong Xiao (txiao2)
 * **Online URL**: https://share.streamlit.io/cmu-ids-2020/a3-tomato-and-potato
 
 ## Instructions
