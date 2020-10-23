@@ -1,16 +1,18 @@
-# Project name
-<!-- 
-![A screenshot of your application. Could be a GIF.](screenshot.png) -->
+# Chicago Crime
+
+![A screenshot of your application. Could be a GIF.](screenshot.png)
 
 <!-- TODO: Short abstract describing the main goals and how you achieved them. -->
 
 ## Project Goals
 
-In this project, we want to answer following questions: what frequency of different type of crimes happen in Chicago? How do crimes distribute in different community in Chicago？ How to crimes occur across time monthly, dately and hourly? What's the specific district(community area) crime information?
+In this project, we want to answer following questions: What frequency of different types of crimes happen in Chicago? How do crimes distribute in different communities in Chicago？ How do crimes occur across time monthly, dately and hourly? What's the specific district(community area) crime information?
 
 ## Design
 
 Our data includes both time and space information, also it contains some extra data like type, arrest state. Hence, we want to visualize the data mainly in two dimension, one is to visualize space information in geographic map, another one is to visualize the time change in area chart and heatmap. For other discrete feature, we use bar chart to present.
+
+For quantative attributes like case count, we use position to represent it in bar chart and use color saturation to represent it in geographic map. For location description, which is a nominal attribute, we use color hue to represent it. For other nominal or ordinal attributes, we use position to represent them.
 
 After choosing the visual encodings, we begin to aggregate them and add some interactions.
 
