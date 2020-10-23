@@ -3,6 +3,9 @@
 ![A screenshot of your application. Could be a GIF.](screenshot.png) -->
 
 <!-- TODO: Short abstract describing the main goals and how you achieved them. -->
+![primary type selection](type_selection.gif)
+![time brush selection](Time_brush.gif)
+![location selection](location_selection.gif)
 
 ## Project Goals
 
