@@ -1,4 +1,4 @@
-# CMU Interactive Data Science Assigment 3
+# CMU Interactive Data Science Assigment 3 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/cmu-ids-2020/a3-tomato-and-potato)
 
 * **Team members**: Zhanlin Sun (zhanlins) and Tong Xiao (txiao2)
 * **Online URL**: https://share.streamlit.io/cmu-ids-2020/a3-tomato-and-potato
